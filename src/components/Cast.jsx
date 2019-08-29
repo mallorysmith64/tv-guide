@@ -24,7 +24,6 @@ const Cast = () => {
         return <span>{member.character}</span>
       })}
     </p>
-    <span> This is a test</span>
   )
 }
 
