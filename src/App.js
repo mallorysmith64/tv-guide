@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import Testing from './components/Testing'
+import HomePage from './components/HomePage'
 
 class App extends Component {
   render() {
-    return <Testing />
+    return <HomePage />
   }
 }
 
