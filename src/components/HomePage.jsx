@@ -22,7 +22,7 @@ const HomePage = () => {
   return (
     <>
       {topMovies.map((movie, i) => {
-        return <h3 key={i}>{movie.movie}</h3>
+        return <h3 key={i}>{movie.results}</h3>
       })}
     </>
   )
