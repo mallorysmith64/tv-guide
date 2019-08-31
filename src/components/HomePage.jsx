@@ -28,12 +28,13 @@ const HomePage = () => {
       {topMovies.map((movie, i) => {
         return (
           <section className="movie-titles" key={i}>
-            <h3>{movie.original_name}</h3>
+            <h3>Title: {movie.original_name}</h3>
+            <h4>First Aired: {movie.first_air_date}</h4>
             <img
               src={`https://image.tmdb.org/t/p/${imgSize}${movie.poster_path}`}
               alt="images of top rated movies"
             />
-            <h4>{movie.overview}</h4>
+            <h4>Description: {movie.overview}</h4>
           </section>
         )
       })}
