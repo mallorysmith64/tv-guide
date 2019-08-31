@@ -3,6 +3,7 @@ import axios from 'axios'
 
 const HomePage = () => {
   const [topMovies, setTopMovies] = useState([]) //array in console
+  const imgSize = 'w200'
 
   //async cannot go on components
   const getTopMovies = async () => {
@@ -12,7 +13,8 @@ const HomePage = () => {
     )
     console.log('got all top movies', resp.data)
     console.log('targeting one movie', resp.data.results[0])
-    console.log('targeting one movie title:', resp.data.results[0].name)
+    // console.log('targeting one movie title:', resp.data.results[0].name)
+    // console.log('get images', resp.data.results[0].poster_path) //delete this
     setTopMovies(resp.data.results)
   }
 
@@ -22,10 +24,16 @@ const HomePage = () => {
 
   return (
     <>
+      <h1>Top Rated Movies</h1>
       {topMovies.map((movie, i) => {
         return (
-          <section key={i}>
+          <section className="movie-titles" key={i}>
             <h3>{movie.original_name}</h3>
+            <img
+              src={`https://image.tmdb.org/t/p/${imgSize}${movie.poster_path}`}
+              alt="images of top rated movies"
+            />
+            <h4>{movie.overview}</h4>
           </section>
         )
       })}
