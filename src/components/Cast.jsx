@@ -19,11 +19,13 @@ const Cast = () => {
   }, [])
 
   return (
-    <p>
-      {cast.map(member => {
-        return <span>{member.character}</span>
-      })}
-    </p>
+    <div>
+      <ul>
+        {cast.map(member => {
+          return <li>{member.credit_id + ' '}</li>
+        })}
+      </ul>
+    </div>
   )
 }
 
