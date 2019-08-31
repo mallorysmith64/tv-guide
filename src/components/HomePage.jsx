@@ -13,17 +13,21 @@ const HomePage = () => {
     console.log('got all top movies', resp.data)
     console.log('targeting one movie', resp.data.results[0])
     setTopMovies(resp.data.results)
+    getRandomPicture(resp.data.results)
   }
 
-  // const getRandomPicture = () => {
-  //   let randomPhotos = topMovies[Math.floor(Math.random() * results.length - 1)]
-  //   return randomPhotos
-  // }
+  const getRandomPicture = movies => {
+    console.log(movies)
+    let randomIdx = Math.floor(Math.random() * movies.length)
+    console.log(randomIdx)
+    let randomPhotos = movies[randomIdx]
+    console.log(randomPhotos)
+    return randomPhotos
+  }
 
   useEffect(() => {
     getTopMovies()
     // setInterval(getRandomPicture, 2000)
-    // getRandomPicture()
   }, [])
 
   return (
@@ -31,7 +35,7 @@ const HomePage = () => {
       <h1>Random Movie</h1>
       {topMovies.map((movie, i) => {
         return (
-          <section key={i}>
+          <section className="random-photo" key={i}>
             <img
               src={`${imageUrl}${imgSize}${movie.poster_path}`}
               alt={movie.id}
