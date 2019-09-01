@@ -34,14 +34,19 @@ const HomePage = () => {
 
   return (
     <>
-      <h2>TV Show of The Day</h2>
-      <Show className="random-photo" show={randomShow} imgSize={imgSize} />
-      <h2>Top Rated TV Shows</h2>
+      <section className="random-show-container">
+        <Show show={randomShow} imgSize={imgSize} />
+      </section>
+      <section className="top-show-header">
+        <h2>Top Rated TV Shows</h2>
+      </section>
       <Switch>
         <Route exact path="/">
-          {topShows.map((show, i) => {
-            return <Show show={show} imgSize={imgSize} key={i} />
-          })}
+          <section className="all-shows">
+            {topShows.map((show, i) => {
+              return <Show show={show} imgSize={imgSize} key={i} />
+            })}
+          </section>
         </Route>
         <Route path="/a">
           <Show show={topShows[0]} imgSize={imgSize} />

@@ -5,7 +5,7 @@ const Show = props => {
   const imageUrl = 'https://image.tmdb.org/t/p/'
   if (!show) return <></>
   return (
-    <section className="show-titles">
+    <section className="show-container">
       <h3>Title: {show.original_name}</h3>
       <h4>First Aired: {show.first_air_date}</h4>
       <img src={`${imageUrl}${imgSize}${show.poster_path}`} alt={show.id} />

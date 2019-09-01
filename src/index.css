@@ -11,7 +11,38 @@ body {
   min-height: 100%;
 }
 
-/* .movie-titles {
+.page-title {
+  text-align: center;
+  font-family: 'Milonga', cursive;
+  font-size: 3em;
+  padding: 1em;
+}
+
+.random-show-container {
   display: flex;
-  
-} */
+  justify-content: center;
+  background-color: rgb(212, 208, 208);
+}
+
+.top-show-header {
+  text-align: center;
+}
+
+.show-container {
+  display: flex;
+  flex-direction: column;
+  width: 20em;
+  margin: 3em;
+  border-radius: 1em;
+  border: 1px #e1e4e8 solid !important;
+  background-color: rgb(97%, 97%, 98%);
+}
+
+.all-shows {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  background-color: rgb(235, 235, 235);
+}

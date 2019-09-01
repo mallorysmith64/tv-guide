@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <h1> TV Shows You Should Be Watching</h1>
+        <h1 className="page-title"> TV Shows You Should Be Watching</h1>
         <BrowserRouter>
           <HomePage />
         </BrowserRouter>
