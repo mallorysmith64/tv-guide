@@ -14,7 +14,7 @@ const Cast = () => {
   }
 
   useEffect(() => {
-    fetchData() s
+    fetchData()
     console.log({ cast })
   }, [])
 
@@ -22,7 +22,7 @@ const Cast = () => {
     <div>
       <ul>
         {cast.map(member => {
-          return <li>{member.character s + ' '}</li>
+          return <li>{member.character + ' '}</li>
         })}
       </ul>
     </div>
