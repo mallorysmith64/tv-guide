@@ -5,9 +5,12 @@ import HomePage from './components/HomePage.jsx'
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <HomePage />
-      </BrowserRouter>
+      <>
+        <h1> TV Shows You Should Be Watching</h1>
+        <BrowserRouter>
+          <HomePage />
+        </BrowserRouter>
+      </>
     )
   }
 }
