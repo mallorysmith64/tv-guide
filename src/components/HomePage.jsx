@@ -23,13 +23,13 @@ const HomePage = () => {
   const getRandomPicture = photos => {
     let randomIdx = Math.floor(Math.random() * photos.length)
     console.log(randomIdx)
-    let randShow = photos[randomIdx]
-    console.log('random show:', randShow.original_name)
-    setRandomShow(randShow)
+    let randomShow = photos[randomIdx]
+    console.log('random show:', randomShow.original_name)
+    setRandomShow(randomShow)
   }
 
   useEffect(() => {
-    getTopShows()
+    setInterval(getTopShows, 5000)
   }, [])
 
   return (
