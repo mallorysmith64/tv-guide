@@ -1,0 +1,33 @@
+{
+  "private": true,
+  "name": "tv-guide",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "react-scripts build",
+    "deploy": "echo 'To setup deployment run: yarn setup-deploy'",
+    "setup-deploy": "app-app --deploy && yarn deploy",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "stylelint": "^10.1.0",
+    "stylelint-config-standard": "^18.3.0"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "json": "^9.0.6",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-scripts": "^3.1.1",
+    "eslint": "^6.1.0 1",
+    "eslint-utils": "^1.4.1",
+    "lodash": "^4.17.13"
+  }
+}
