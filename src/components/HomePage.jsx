@@ -1,19 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import {
-  BrowserRouter,
-  Route,
-  Link,
-  Switch,
-  withRouter
-} from 'react-router-dom'
+import { Route, Link, Switch, withRouter } from 'react-router-dom'
 import Movie from './Movie'
 
 const HomePage = props => {
   const [topMovies, setTopMovies] = useState([])
   const imgSize = 'w200'
   // const [randomIndex, setRandomIndex] = useState(0)
-  const imageUrl = 'https://image.tmdb.org/t/p/'
   const [randomMovie, setRandomMovie] = useState({})
 
   const getTopMovies = async () => {
@@ -42,15 +35,6 @@ const HomePage = props => {
     // getRandomPicture()
   }, [])
 
-  let id = 0
-  let movie = null
-  if (window.location.pathname.length > 6) {
-    id = parseInt(window.location.pathname.substring(7))
-    movie = topMovies.filter(m => {
-      return m.id === id
-    })[0]
-    console.log('singleMovie', movie)
-  }
   return (
     <>
       {/* <h1>Random Movie</h1>
@@ -61,7 +45,9 @@ const HomePage = props => {
           alt={topMovies[randomIndex].id}
         /> */}
       {/* </section> */}
-      <h1>Top Rated Movies</h1>
+      <h1>
+        <Link to="/">Top Rated Movies</Link>
+      </h1>
       <Switch>
         <Route exact path="/">
           <h2>Top Rated Movies</h2>
@@ -69,12 +55,28 @@ const HomePage = props => {
             return <Movie movie={movie} imgSize={imgSize} key={i} />
           })}
         </Route>
-        <Route path="/movie/:id">
-          {console.log('props', props)}
-          {console.log('topMovies', topMovies)}
-          {console.log('id', id)}
-          <Movie movie={movie} imgSize={imgSize} />
-        </Route>
+        <Route
+          path="/movie/:id"
+          render={props => {
+            console.log('props', props)
+            let {
+              match: {
+                params: { id }
+              }
+            } = props
+            id = parseInt(id)
+            const movies = topMovies.filter(m => {
+              return m.id === id
+            })
+
+            if (!movies.length)
+              return <div>Movie id {props.match.params.id} not found</div>
+
+            return movies.map(m => {
+              return <Movie movie={m} key={m.id} imgSize={imgSize} />
+            })
+          }}
+        />
       </Switch>
     </>
   )
