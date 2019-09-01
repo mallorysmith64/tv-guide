@@ -34,6 +34,7 @@ const HomePage = () => {
 
   return (
     <>
+      <h1 className="page-title"> TV Shows You Should Be Watching</h1>
       <section className="random-show-container">
         <Show show={randomShow} imgSize={imgSize} />
       </section>
@@ -52,6 +53,7 @@ const HomePage = () => {
           <Show show={topShows[0]} imgSize={imgSize} />
         </Route>
       </Switch>
+      <footer>Updated 2019</footer>
     </>
   )
 }
