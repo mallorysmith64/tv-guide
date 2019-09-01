@@ -14,7 +14,7 @@ const Cast = () => {
   }
 
   useEffect(() => {
-    fetchData()
+    fetchData() s
     console.log({ cast })
   }, [])
 
@@ -22,7 +22,7 @@ const Cast = () => {
     <div>
       <ul>
         {cast.map(member => {
-          return <li>{member.credit_id + ' '}</li>
+          return <li>{member.character s + ' '}</li>
         })}
       </ul>
     </div>
