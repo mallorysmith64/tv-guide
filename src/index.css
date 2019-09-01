@@ -32,9 +32,10 @@ body {
   display: flex;
   flex-direction: column;
   width: 20em;
-  margin: 3em;
+  margin: 2em;
+  padding: 1em;
   border-radius: 1em;
-  border: 1px #e1e4e8 solid !important;
+  border: 1px #41689b solid !important;
   background-color: rgb(97%, 97%, 98%);
 }
 
