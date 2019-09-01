@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
+import {
+  BrowserRouter,
+  Route,
+  Link,
+  Switch,
+  withRouter
+} from 'react-router-dom'
 import Movie from './Movie'
 
-const HomePage = () => {
+const HomePage = props => {
   const [topMovies, setTopMovies] = useState([])
   const imgSize = 'w200'
   // const [randomIndex, setRandomIndex] = useState(0)
@@ -36,6 +42,15 @@ const HomePage = () => {
     // getRandomPicture()
   }, [])
 
+  let id = 0
+  let movie = null
+  if (window.location.pathname.length > 6) {
+    id = parseInt(window.location.pathname.substring(7))
+    movie = topMovies.filter(m => {
+      return m.id === id
+    })[0]
+    console.log('singleMovie', movie)
+  }
   return (
     <>
       {/* <h1>Random Movie</h1>
@@ -54,13 +69,15 @@ const HomePage = () => {
             return <Movie movie={movie} imgSize={imgSize} key={i} />
           })}
         </Route>
-        <Route path="/a">
+        <Route path="/movie/:id">
+          {console.log('props', props)}
           {console.log('topMovies', topMovies)}
-          <Movie movie={topMovies[0]} imgSize={imgSize} />
+          {console.log('id', id)}
+          <Movie movie={movie} imgSize={imgSize} />
         </Route>
       </Switch>
     </>
   )
 }
 
-export default HomePage
+export default withRouter(HomePage)
