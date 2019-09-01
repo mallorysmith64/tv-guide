@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Movie = props => {
   const { movie, imgSize } = props
@@ -6,7 +7,9 @@ const Movie = props => {
   if (!movie) return <></>
   return (
     <section className="movie-titles">
-      <h3>Title: {movie.original_name}</h3>
+      <h3>
+        Title: <Link to={`/movie/${movie.id}`}>{movie.name}</Link>
+      </h3>
       <h4>First Aired: {movie.first_air_date}</h4>
       <img src={`${imageUrl}${imgSize}${movie.poster_path}`} alt={movie.id} />
       <h4>Description: {movie.overview}</h4>
