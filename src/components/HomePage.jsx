@@ -6,20 +6,18 @@ import Show from './Show'
 const HomePage = props => {
   const [topShows, setTopShows] = useState([])
   const imgSize = 'w200'
-  // const [randomIndex, setRandomIndex] = useState(0)
   const [randomShow, setRandomShow] = useState({})
 
   const getTopShows = async () => {
     const resp = await axios.get(
       `https://api.themoviedb.org/3/tv/top_rated?api_key=c2cccc08a093d5b7cfe606b5745c1af5&language=en-US&page=1`
     )
-    console.log('got all top movies', resp.data)
+    console.log('got all top shows', resp.data)
     setTopShows(resp.data.results)
     getRandomPicture(resp.data.results)
   }
 
   const getRandomPicture = photos => {
-    console.log(photos)
     let randomIdx = Math.floor(Math.random() * photos.length)
     console.log(randomIdx)
     let randShow = photos[randomIdx]
@@ -30,35 +28,29 @@ const HomePage = props => {
 
   useEffect(() => {
     getTopShows()
-    // setInterval(getRandomPicture, 2000)
-    // getRandomPicture()
+    setInterval(getTopShows, 5000)
   }, [])
 
   return (
     <>
-      {/* <h1>Random Show</h1>
-      <section className="random-photo"> */}
-      {/* <h1>{topShows[randomIndex].original_name}</h1> */}
-      {/* <img
-          src={`${imageUrl}${imgSize}${topShows[randomIndex].poster_path}`}
-          alt={topShows[randomIndex].id}
-        /> */}
-      {/* </section> */}
-      <h1>
-        <Link to="/">Top Rated Shows</Link>
+      <h1 className="page-title">
+        <Link to="/">TV Shows You Should Be Watching</Link>{' '}
       </h1>
       <Switch>
         <Route exact path="/">
-          <h2>Top Rated Shows</h2>
-          {console.log('topShows', topShows)}
-          {topShows.map((movie, i) => {
-            return (
-              <Show showCast={false} movie={movie} imgSize={imgSize} key={i} />
-            )
-          })}
+          <section className="random-show-container">
+            <Show show={randomShow} imgSize={imgSize} />
+          </section>
+          <section className="all-shows">
+            {topShows.map((show, i) => {
+              return (
+                <Show showCast={false} show={show} imgSize={imgSize} key={i} />
+              )
+            })}
+          </section>
         </Route>
         <Route
-          path="/movie/:id"
+          path="/show/:id"
           render={props => {
             console.log('props', props)
             let {
@@ -67,23 +59,24 @@ const HomePage = props => {
               }
             } = props
             id = parseInt(id)
-            const movies = topShows.filter(m => {
+            const shows = topShows.filter(m => {
               return m.id === id
             })
             console.log('topShows', topShows)
-            console.log('movies', movies)
+            console.log('shows', shows)
 
-            if (!movies.length)
+            if (!shows.length)
               return <div>Show id {props.match.params.id} not found</div>
 
-            return movies.map(m => {
+            return shows.map(m => {
               return (
-                <Show showCast={true} movie={m} key={m.id} imgSize={imgSize} />
+                <Show showCast={true} show={m} key={m.id} imgSize={imgSize} />
               )
             })
           }}
         />
       </Switch>
+      <footer>Updated 2019</footer>
     </>
   )
 }
