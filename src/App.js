@@ -6,10 +6,11 @@ import Cast from './components/Cast'
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <HomePage />
-        <Cast />
-      </BrowserRouter>
+      <>
+        <BrowserRouter>
+          <HomePage />
+        </BrowserRouter>
+      </>
     )
   }
 }

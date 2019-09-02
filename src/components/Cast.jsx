@@ -8,7 +8,7 @@ const Cast = props => {
     const baseUrl = 'https://api.themoviedb.org'
     const api_key = '785c5d04247a97014c1e2374403ebdc2'
 
-    const tvid = props.movie.id
+    const tvid = props.show.id
     const response = await axios.get(
       `${baseUrl}/3/tv/${tvid}/credits?api_key=${api_key}&language=en-US`
     )
@@ -16,7 +16,7 @@ const Cast = props => {
   }
 
   useEffect(() => {
-    if (props.movie) fetchData()
+    if (props.show) fetchData()
   }, [])
 
   return (

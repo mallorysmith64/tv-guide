@@ -20,3 +20,63 @@ body {
 
 .charinfo {
 }
+.page-title a {
+  color: white;
+}
+
+.page-title {
+  margin: 0;
+  text-align: center;
+  font-family: 'Milonga', cursive;
+  font-size: 3em;
+  color: silver;
+  padding: 1em;
+  background-color: #3a4454;
+}
+
+.random-show-container {
+  display: flex;
+  justify-content: center;
+  background-color: #6e7e85;
+}
+
+.top-show-header {
+  background-color: #757272;
+  color: rgb(207, 201, 201);
+  text-align: center;
+  font-size: 1.9em;
+  font-family: serif;
+  padding: 0.1em;
+}
+
+.show-container {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  width: 20em;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 1em;
+  border: 1px #41689b solid !important;
+  background-color: rgb(97%, 97%, 98%);
+}
+
+.all-shows {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #8da1b9;
+}
+
+footer {
+  background-color: #3a4454;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 1em;
+  color: silver;
+}
+
+a:visited {
+  text-decoration: none;
+}
