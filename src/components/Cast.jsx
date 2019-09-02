@@ -20,12 +20,12 @@ const Cast = props => {
   }, [])
 
   return (
-    <div>
-      <ul>
-        {cast.map(member => {
-          return (
-            <div className="charinfo">
-              <li>{member.character}</li>
+    <div className="character-row">
+      {cast.map(member => {
+        return (
+          <div className="charinfo">
+            <li>{member.character}</li>
+            <div className="images">
               <img
                 className="profile-pic"
                 src={`${'https://image.tmdb.org/t/p/w500'}${
@@ -34,9 +34,9 @@ const Cast = props => {
                 alt={cast.name}
               />
             </div>
-          )
-        })}
-      </ul>
+          </div>
+        )
+      })}
     </div>
   )
 }

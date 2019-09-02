@@ -17,9 +17,20 @@ body {
   border-radius: 20px;
   margin-bottom: 20px;
 }
+.character-row {
+  display: flex;
+  /* flex-direction: row; */
+}
 
 .charinfo {
+  margin-right: 50px;
 }
+
+.images {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .page-title a {
   color: white;
 }
