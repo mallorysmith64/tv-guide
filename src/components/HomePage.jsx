@@ -14,7 +14,6 @@ const HomePage = props => {
       `https://api.themoviedb.org/3/tv/top_rated?api_key=c2cccc08a093d5b7cfe606b5745c1af5&language=en-US&page=1`
     )
     console.log('got all top movies', resp.data)
-    console.log('targeting one movie', resp.data.results[0])
     setTopMovies(resp.data.results)
     getRandomPicture(resp.data.results)
   }
@@ -51,8 +50,11 @@ const HomePage = props => {
       <Switch>
         <Route exact path="/">
           <h2>Top Rated Movies</h2>
+          {console.log('topMovies', topMovies)}
           {topMovies.map((movie, i) => {
-            return <Movie movie={movie} imgSize={imgSize} key={i} />
+            return (
+              <Movie showCast={false} movie={movie} imgSize={imgSize} key={i} />
+            )
           })}
         </Route>
         <Route
@@ -68,12 +70,16 @@ const HomePage = props => {
             const movies = topMovies.filter(m => {
               return m.id === id
             })
+            console.log('topMovies', topMovies)
+            console.log('movies', movies)
 
             if (!movies.length)
               return <div>Movie id {props.match.params.id} not found</div>
 
             return movies.map(m => {
-              return <Movie movie={m} key={m.id} imgSize={imgSize} />
+              return (
+                <Movie showCast={true} movie={m} key={m.id} imgSize={imgSize} />
+              )
             })
           }}
         />
