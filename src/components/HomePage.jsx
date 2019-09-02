@@ -6,7 +6,6 @@ import Show from './Show'
 const HomePage = props => {
   const [topShows, setTopShows] = useState([])
   const imgSize = 'w200'
-  // const [randomIndex, setRandomIndex] = useState(0)
   const [randomShow, setRandomShow] = useState({})
 
   const getTopShows = async () => {
@@ -28,6 +27,7 @@ const HomePage = props => {
   }
 
   useEffect(() => {
+    getTopShows()
     setInterval(getTopShows, 5000)
   }, [])
 
@@ -85,4 +85,4 @@ const HomePage = props => {
   )
 }
 
-export default withRouter(HomePage)
+export default HomePage
