@@ -11,6 +11,14 @@ body {
   min-height: 100%;
 }
 
+.cast-link {
+  display: flex;
+}
+
+ul {
+  list-style: none;
+}
+
 .page-title {
   margin: 0;
   text-align: center;

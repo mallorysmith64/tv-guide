@@ -13,5 +13,4 @@ const Show = props => {
     </section>
   )
 }
-
 export default Show

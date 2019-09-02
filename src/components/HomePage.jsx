@@ -6,8 +6,6 @@ import Show from './Show'
 const HomePage = () => {
   const [topShows, setTopShows] = useState([])
   const imgSize = 'w200'
-  // const [randomIndex, setRandomIndex] = useState(0)
-  // const imageUrl = 'https://image.tmdb.org/t/p/'
   const [randomShow, setRandomShow] = useState({})
 
   const getTopShows = async () => {
@@ -29,6 +27,7 @@ const HomePage = () => {
   }
 
   useEffect(() => {
+    getTopShows()
     setInterval(getTopShows, 5000)
   }, [])
 
@@ -57,5 +56,4 @@ const HomePage = () => {
     </>
   )
 }
-
 export default HomePage
