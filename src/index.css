@@ -11,6 +11,16 @@ body {
   min-height: 100%;
 }
 
+.profile-pic {
+  width: 300px;
+  height: 400px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.page-title a {
+  color: white;
+  
 .cast-link {
   display: flex;
 }
@@ -47,6 +57,7 @@ ul {
 .show-container {
   display: flex;
   flex-direction: column;
+  color: black;
   width: 20em;
   margin: 1em;
   padding: 1em;
@@ -69,4 +80,8 @@ footer {
   text-align: center;
   padding: 1em;
   color: silver;
+}
+
+a:visited {
+  text-decoration: none;
 }

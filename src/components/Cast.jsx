@@ -1,28 +1,40 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
-const Cast = () => {
+const Cast = props => {
   const [cast, setCast] = useState([])
 
   const fetchData = async () => {
+    const baseUrl = 'https://api.themoviedb.org'
+    const api_key = '785c5d04247a97014c1e2374403ebdc2'
+
+    const tvid = props.show.id
     const response = await axios.get(
-      `https://api.themoviedb.org/3/tv/1/credits?api_key=785c5d04247a97014c1e2374403ebdc2&language=en-US`
+      `${baseUrl}/3/tv/${tvid}/credits?api_key=${api_key}&language=en-US`
     )
-    console.log(response.data.cast)
     setCast(response.data.cast)
-    console.log({ cast })
   }
 
   useEffect(() => {
-    fetchData()
-    console.log({ cast })
+    if (props.show) fetchData()
   }, [])
 
   return (
     <div>
       <ul>
         {cast.map(member => {
-          return <li>{member.character + ' '}</li>
+          return (
+            <div className="charinfo">
+              <li>{member.character}</li>
+              <img
+                className="profile-pic"
+                src={`${'https://image.tmdb.org/t/p/w500'}${
+                  member.profile_path
+                }`}
+                alt={cast.name}
+              />
+            </div>
+          )
         })}
       </ul>
     </div>
