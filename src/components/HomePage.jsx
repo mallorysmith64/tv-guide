@@ -36,6 +36,10 @@ const HomePage = props => {
       <h1 className="page-title">
         <Link to="/">TV Shows You Should Be Watching</Link>{' '}
       </h1>
+
+      <section className="top-show-header">
+        <h2>Top Rated TV Shows</h2>
+      </section>
       <Switch>
         <Route exact path="/">
           <section className="random-show-container">
@@ -81,4 +85,4 @@ const HomePage = props => {
   )
 }
 
-export default withRouter(HomePage)
+export default HomePage
