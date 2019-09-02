@@ -8,7 +8,7 @@ const Show = props => {
 
   if (!movie) return <></>
   return (
-    <section className="movie-titles">
+    <section className="show-containers">
       <h3>
         Title: <Link to={`/movie/${movie.id}`}>{movie.name}</Link>
       </h3>
