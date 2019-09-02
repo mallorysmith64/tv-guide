@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom'
 import Cast from '../components/Cast'
 
 const Show = props => {
-  const { movie, imgSize } = props
+  const { show, imgSize } = props
   const imageUrl = 'https://image.tmdb.org/t/p/'
 
-  if (!movie) return <></>
+  if (!show) return <></>
   return (
     <section className="show-containers">
       <h3>
-        Title: <Link to={`/movie/${movie.id}`}>{movie.name}</Link>
+        Title: <Link to={`/show/${show.id}`}>{show.name}</Link>
       </h3>
-      <h4>First Aired: {movie.first_air_date}</h4>
-      <img src={`${imageUrl}${imgSize}${movie.poster_path}`} alt={movie.id} />
-      <h4>Description: {movie.overview}</h4>
-      {props.showCast ? <Cast movie={movie} /> : <></>}
+      <h4>First Aired: {show.first_air_date}</h4>
+      <img src={`${imageUrl}${imgSize}${show.poster_path}`} alt={show.id} />
+      <h4>Description: {show.overview}</h4>
+      {props.showCast ? <Cast show={show} /> : <></>}
     </section>
   )
 }
