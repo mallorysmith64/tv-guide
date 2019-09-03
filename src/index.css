@@ -17,6 +17,7 @@ body {
   border-radius: 20px;
   margin-bottom: 20px;
 }
+
 .character-row {
   display: flex;
   /* flex-direction: row; */
