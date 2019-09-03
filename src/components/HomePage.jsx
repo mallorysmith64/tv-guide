@@ -37,11 +37,11 @@ const HomePage = props => {
         <Link to="/">TV Shows You Should Be Watching</Link>{' '}
       </h1>
 
-      <section className="top-show-header">
-        <h2>Top Rated TV Shows</h2>
-      </section>
       <Switch>
         <Route exact path="/">
+          <section className="top-show-header">
+            <h2>Top Rated TV Shows</h2>
+          </section>
           <section className="random-show-container">
             <Show show={randomShow} imgSize={imgSize} />
           </section>
