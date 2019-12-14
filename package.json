@@ -5,10 +5,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "predeploy": "react-scripts build",
-    "deploy": "echo 'To setup deployment run: yarn setup-deploy'",
+    "deploy": "netlify deploy --prod --dir=build",
     "setup-deploy": "app-app --deploy && yarn deploy",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postdeploy": "echo 'Your site was deployed to https://tv-guide-mallory64.netlify.com'"
   },
   "browserslist": [
     ">0.2%",
@@ -31,5 +32,6 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "^3.1.1",
     "react-star-rating-input": "^8.0.1"
-  }
+  },
+  "homepage": "https://tv-guide-mallory64.netlify.com"
 }

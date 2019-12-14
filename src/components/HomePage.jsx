@@ -23,7 +23,6 @@ const HomePage = props => {
     let randShow = photos[randomIdx]
     console.log(randShow)
     setRandomShow(randShow)
-    // return randomPhotos
   }
 
   useEffect(() => {
