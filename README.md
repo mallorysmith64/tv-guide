@@ -1,6 +1,8 @@
 # Tv Guide
 
-**Features** </br>
+**Check this project out here:** https://tv-guide-mallorysmith64.netlify.com/  </br>
+
+**TV Guide Features** </br>
 
 **Homepage contains list of all top-rated TV shows** and returns them from this API </br>
  https://api.themoviedb.org/3/tv/top_rated?api_key=<<api_key>>&language=en-US&page=1 </br>
