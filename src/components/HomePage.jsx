@@ -41,9 +41,11 @@ const HomePage = props => {
           <section className="top-show-header">
             <h2>Top Rated TV Shows</h2>
           </section>
+
           <section className="random-show-container">
             <Show show={randomShow} imgSize={imgSize} />
           </section>
+
           <section className="all-shows">
             {topShows.map((show, i) => {
               return (
@@ -52,6 +54,7 @@ const HomePage = props => {
             })}
           </section>
         </Route>
+
         <Route
           path="/show/:id"
           render={props => {

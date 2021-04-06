@@ -20,11 +20,9 @@ const Cast = props => {
   }, [])
 
   return (
-    <div>
-      <div className="character-row">
+      <div className="all-shows">
         {cast.map(member => {
           return (
-            <div className="charinfo">
               <div className="images">
                 <img
                   className="profile-pic"
@@ -33,13 +31,11 @@ const Cast = props => {
                   }`}
                   alt={cast.name}
                 />
-              </div>
               <div className="characterName">{member.character}</div>
             </div>
           )
         })}
       </div>
-    </div>
   )
 }
 

@@ -26,13 +26,6 @@ body {
   background-color: #8da1b9;
 }
 
-.charinfo {
-  margin-left: 14px;
-  margin-right: 14px;
-  max-width: 300px;
-  max-height: 420px;
-  text-align: center;
-}
 .characterName {
   font-family: 'Milonga', cursive;
   /* font-weight: bold; */
@@ -91,10 +84,12 @@ body {
   border: 1px #41689b solid !important;
   background-color: rgb(97%, 97%, 98%);
 }
+
 .show-multi {
   display: flex;
   width: 20em;
 }
+
 .all-shows {
   display: flex;
   justify-content: space-evenly;
