@@ -46,7 +46,7 @@ const HomePage = props => {
             <Show show={randomShow} imgSize={imgSize} />
           </section>
 
-          <section className="all-shows">
+          <section className="all-shows blue-background">
             {topShows.map((show, i) => {
               return (
                 <Show showCast={false} show={show} imgSize={imgSize} key={i} />
