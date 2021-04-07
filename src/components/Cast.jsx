@@ -20,7 +20,7 @@ const Cast = props => {
   }, [])
 
   return (
-      <div className="all-shows">
+      <div className="show-picked-container">
         {cast.map(member => {
           return (
               <div className="images">

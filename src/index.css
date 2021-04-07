@@ -18,17 +18,8 @@ body {
   margin-bottom: 20px;
 }
 
-.character-row {
-  padding-top: 14px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  background-color: #8da1b9;
-}
-
 .characterName {
   font-family: 'Milonga', cursive;
-  /* font-weight: bold; */
   position: relative;
   bottom: 90px;
   font-size: 1.6em;
@@ -46,10 +37,6 @@ body {
   color: white;
 }
 
-.cast-link {
-  /* display: flex; */
-}
-
 .page-title {
   margin: 0;
   text-align: center;
@@ -63,7 +50,36 @@ body {
 .random-show-container {
   display: flex;
   justify-content: center;
-  background-color: #6e7e85;
+  background-color: #6e7e85 !important;
+}
+
+/* tv show chosen on cast page */
+.show-picked-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.show-picked {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  width: 20em;
+  color: black;
+  padding: 1em;
+  border-radius: 1em;
+  background-color: rgb(97%, 97%, 98%);
+   
+  margin: 1em;
+}
+
+.background-show-picked {
+  display:flex;
+  width:100%;
+  background-color: #8da1b9;
+  /* background-color: #6e7e85; */
 }
 
 .top-show-header {
@@ -81,8 +97,9 @@ body {
   margin: 1em;
   padding: 1em;
   border-radius: 1em;
-  border: 1px #41689b solid !important;
+  /* border: 1px #41689b solid !important; */
   background-color: rgb(97%, 97%, 98%);
+  /* background-color: #8da1b9; */
 }
 
 .show-multi {
@@ -95,6 +112,10 @@ body {
   justify-content: space-evenly;
   flex-direction: row;
   flex-wrap: wrap;
+  background-color: #8da1b9;
+}
+
+.blue-background {
   background-color: #8da1b9;
 }
 
