@@ -17,7 +17,7 @@ const Cast = props => {
 
   useEffect(() => {
     if (props.show) fetchData();
-  }, []);
+  });
 
   return (
     <div className="all-shows">
