@@ -77,7 +77,6 @@ body {
   display: flex;
   width: 100%;
   background-color: #8da1b9;
-  /* background-color: #6e7e85; */
 }
 
 .top-show-header {
@@ -108,7 +107,6 @@ body {
   justify-content: space-evenly;
   flex-direction: row;
   flex-wrap: wrap;
-  /* background-color: #8da1b9; */
 }
 
 .blue-background {
