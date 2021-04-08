@@ -28,7 +28,7 @@ const HomePage = props => {
   useEffect(() => {
     getTopShows();
     setInterval(getTopShows, 5000);
-  }, []);
+  }, []); // need empty dependency, otherwise it will keep rerendering indefinitely
 
   return (
     <>
