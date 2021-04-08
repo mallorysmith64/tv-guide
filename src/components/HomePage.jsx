@@ -82,8 +82,6 @@ const HomePage = props => {
           }}
         />
       </Switch>
-
-      <footer>Updated 2019</footer>
     </>
   );
 };
