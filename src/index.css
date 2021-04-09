@@ -18,19 +18,17 @@ body {
   border-radius: 20px;
 }
 
-.characterName {
+.cast-names {
+  text-align: center;
   font-family: "Milonga", cursive;
   position: relative;
-  bottom: 90px;
+  bottom: 36px;
   font-size: 1.6em;
   max-width: 300px;
-  margin-left: 30px;
-  margin-right: 30px;
   padding: 5px;
   background-color: #ddffdd;
-  opacity: 0.8;
   color: black;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 .page-title a {

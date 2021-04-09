@@ -29,7 +29,7 @@ const Cast = props => {
               src={`${"https://image.tmdb.org/t/p/w500"}${member.profile_path}`}
               alt={cast.name}
             />
-            <div className="characterName">{member.character}</div>
+            <div className="cast-names">{member.character}</div>
           </div>
         );
       })}
