@@ -58,17 +58,16 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   padding: 1em;
+  font-weight:bold;
 }
 
 .show-picked {
   display: flex;
   flex-direction: column;
   width: 20em;
-  color: black;
-  padding: 1em;
+  padding: 0.5em;
   border-radius: 1em;
   background-color: rgb(97%, 97%, 98%);
-  margin: 1em;
 }
 
 .background-show-picked {
@@ -89,7 +88,6 @@ body {
 .show-container {
   flex-direction: column;
   color: black;
-  margin: 1em;
   padding: 1em;
   border-radius: 1em;
   background-color: rgb(97%, 97%, 98%);
@@ -122,4 +120,8 @@ footer {
 
 a:visited {
   text-decoration: none;
+}
+
+img {
+  padding-bottom:1em;
 }
