@@ -2,7 +2,7 @@
 VERSION=0.21
 RESOURCE_GROUP=tvguide
 
-docker build -t tv-guide:$VERSION .
+#docker build -t tv-guide:$VERSION .
 docker tag tv-guide:$VERSION ${RESOURCE_GROUP}.azurecr.io/tv-guide:$VERSION  
 #docker push ${RESOURCE_GROUP}.azurecr.io/tv-guide:$VERSION  
 
