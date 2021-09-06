@@ -1,5 +1,6 @@
 resource "azurerm_container_group" "aci" {
   name                = "tvguide-instance"
+  depends_on          = [null_resource.push_image]
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   ip_address_type     = "public"
@@ -24,11 +25,14 @@ resource "azurerm_container_group" "aci" {
         password = azurerm_container_registry.acr.admin_password
   }
 
-  // identity {
-  //   type = "SystemAssigned"
-  // }
-
   tags = {
     environment = "dev"
   }
 } 
+
+resource null_resource push_image {
+  depends_on = [azurerm_container_registry.acr]
+  provisioner "local-exec" {
+    command = "docker push ${var.tv-guide-resource-group}.azurecr.io/tv-guide:${var.tv-guide-version}"
+  }
+}
