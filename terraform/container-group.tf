@@ -33,6 +33,6 @@ resource "azurerm_container_group" "aci" {
 resource null_resource push_image {
   depends_on = [azurerm_container_registry.acr]
   provisioner "local-exec" {
-    command = "docker push ${var.tv-guide-resource-group}.azurecr.io/tv-guide:${var.tv-guide-version}"
+    command = "az acr login --name ${var.tv-guide-resource-group} ; docker push ${var.tv-guide-resource-group}.azurecr.io/tv-guide:${var.tv-guide-version}"
   }
 }
