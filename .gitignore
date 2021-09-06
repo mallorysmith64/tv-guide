@@ -24,3 +24,12 @@ yarn-error.log*
 
 # Local Netlify folder
 .netlify
+
+.acr-access-token.json
+.az.json
+terraform.tfstate
+terraform/.terraform.lock.hcl
+terraform/.terraform/
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+
