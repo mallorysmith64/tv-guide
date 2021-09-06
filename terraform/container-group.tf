@@ -4,7 +4,7 @@ resource "azurerm_container_group" "aci" {
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   ip_address_type     = "public"
-  dns_name_label      = "tv-guide-example"
+  dns_name_label      = "${var.tv-guide-resource-group}"
   os_type             = "Linux"
 
   container {
