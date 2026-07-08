@@ -1,7 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Cast from "../components/Cast";
-import ShowMoreText from "react-show-more-text"; // truncate show descriptions
+
+// Replacement for react-show-more-text library (avoids its broken CJS/ESM packaging)
+const ShowMoreText = ({
+  lines = 2,
+  more = "Show more",
+  less = "Show less",
+  className = "",
+  onClick,
+  width,
+  children
+}) => {
+  const [expanded, setExpanded] = useState(false);
+
+  const toggle = () => {
+    const next = !expanded;
+    setExpanded(next);
+    if (onClick) onClick(next);
+  };
+
+  return (
+    <div className={className} style={width ? { width } : undefined}>
+      <div
+        style={
+          expanded
+            ? undefined
+            : {
+                display: "-webkit-box",
+                WebkitLineClamp: lines,
+                WebkitBoxOrient: "vertical",
+                overflow: "hidden"
+              }
+        }
+      >
+        {children}
+      </div>
+      <button
+        type="button"
+        onClick={toggle}
+        className="my-anchor-css-class"
+        style={{
+          background: "none",
+          border: "none",
+          padding: 0,
+          color: "inherit",
+          textDecoration: "underline",
+          cursor: "pointer"
+        }}
+      >
+        {expanded ? less : more}
+      </button>
+    </div>
+  );
+};
 
 const Show = (props) => {
   const { show, imgSize } = props;
@@ -33,9 +85,7 @@ const Show = (props) => {
             more="Show more"
             less="Show less"
             className="content-css"
-            anchorClass="my-anchor-css-class"
             onClick={executeOnClick}
-            expanded={false}
             width={290}
           >
             <h4> Description: {show.overview}</h4>
