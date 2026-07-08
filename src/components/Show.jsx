@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import Cast from "../components/Cast";
 import ShowMoreText from "react-show-more-text"; // truncate show descriptions
 
-const Show = props => {
+const Show = (props) => {
   const { show, imgSize } = props;
   const imageUrl = "https://image.tmdb.org/t/p/";
 
   if (!show) return <></>;
 
-  const executeOnClick = isExpanded => {
+  const executeOnClick = (isExpanded) => {
     console.log(isExpanded);
   };
 
@@ -21,11 +21,15 @@ const Show = props => {
             Title: <Link to={`/show/${show.id}`}>{show.original_name}</Link>
           </h3>
           <h3> First Aired: {show.first_air_date}</h3>
-          <img src={`${imageUrl}${imgSize}${show.poster_path}`} alt={show.id} />
+          <img
+            src={`${imageUrl}${imgSize}${show.poster_path}`}
+            className="show-poster"
+            alt={show.id}
+          />
 
           <ShowMoreText
             /* Default options */
-            lines={3}
+            lines={2}
             more="Show more"
             less="Show less"
             className="content-css"

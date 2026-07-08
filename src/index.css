@@ -58,16 +58,27 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   padding: 1em;
-  font-weight:bold;
+  font-weight: bold;
+}
+
+.show-poster {
+  width: 150px;
+  height: 220px;
+  border-radius: 8px;
+  margin: 0 auto;
+  padding-top: 0.5em;
 }
 
 .show-picked {
   display: flex;
   flex-direction: column;
-  width: 20em;
   padding: 0.5em;
   border-radius: 1em;
   background-color: rgb(97%, 97%, 98%);
+}
+
+.show-picked h3 {
+  margin: 0.2em 0;
 }
 
 .background-show-picked {
@@ -102,6 +113,7 @@ body {
   justify-content: space-evenly;
   flex-direction: row;
   flex-wrap: wrap;
+  padding-bottom: 1em;
 }
 
 .blue-background {
@@ -110,7 +122,7 @@ body {
 }
 
 footer {
-  display:flex;
+  display: flex;
   justify-content: center;
   background-color: #3a4454;
   font-size: 1.5em;
@@ -119,7 +131,7 @@ footer {
 }
 
 .copyright {
- padding-bottom:2em;
+  padding: 0.5em;
 }
 
 a:visited {
@@ -127,5 +139,5 @@ a:visited {
 }
 
 img {
-  padding-bottom:1em;
+  padding-bottom: 1em;
 }
