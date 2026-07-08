@@ -98,9 +98,8 @@ body {
 .top-show-header {
   color: rgb(227, 218, 218);
   text-align: center;
-  font-size: 1.9em;
+  font-size: 1.5em;
   font-family: serif;
-  padding: 0.1em;
 }
 
 .show-container {
