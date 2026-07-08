@@ -4,7 +4,7 @@ Objective: Make an attractive design for a TV guide and show users a list of top
 
 Technologies Used: React.js, Netlify, CSS Flexbox, HTML5 </br>
 
-Checkout TV Guide here: https://tv-guide-mallorysmith64.netlify.com/  </br>
+Checkout TV Guide here: https://tvguide-project.netlify.app/  </br>
 
 To run this project locally: git clone https://github.com/mallorysmith64/tv-guide.git </br>
 cd tv-guide </br>
